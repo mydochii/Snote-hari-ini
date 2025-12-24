@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNOTE Kamu</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    .overlay {
+      background: rgba(255, 240, 230, 0.85);
+      min-height: 100vh;
+      backdrop-filter: blur(6px);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    header {
+      background: rgba(255, 87, 34, 0.9);
+      color: white;
+      padding: 14px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .note {
+      background: rgba(255, 255, 255, 0.95);
+      margin: 25px auto;
+      max-width: 700px;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeUp 1.3s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .note h3 {
+      margin-top: 0;
+      color: #2b2b2b;
+    }
+    a {
+      display: block;
+      color: #e65100;
+      margin: 6px 0;
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #bf360c;
+    }
+    footer {
+      text-align: center;
+      color: #555;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>SNOTE.VIP</header>
+
+    <div class="note">
+      <h3 id="tanggal"></h3>
+      <p> Pemandangan Hari Ini — Cahaya Senja Membelai Langit dengan Lembut</p>
+      <div id="daftar-link"></div>
+    </div>
+
+    <footer>© 2025 Snote Versi Kamu</footer>
+  </div>
+
+  <script>
+    // Tanggal hari ini (Indonesia)
+    const tanggalEl = document.getElementById("tanggal");
+    const today = new Date().toLocaleDateString("id-ID", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+    tanggalEl.textContent = "Note " + today;
+
+    // Link video (UPDATE)
+    const links = [
+      "https://lnk.ink/Vid33yyv1d.short.gy.Jkiv1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Giyc1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.mhv1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Zigv1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.oovv1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Xzon1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.pjhb1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Lpub1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Vdig1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.Pojb1",
+      "https://lnk.ink/Vid33yyv1d.short.gy.nitc1"
+    ];
+
+    const daftar = document.getElementById("daftar-link");
+    links.forEach(link => {
+      const a = document.createElement("a");
+      a.href = link;
+      a.textContent = link;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      daftar.appendChild(a);
+    });
+  </script>
+</body>
+</html>
